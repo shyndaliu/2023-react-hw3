@@ -6,12 +6,13 @@ const TodoPage = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
-  useEffect(() => {
-    const storedTodos = localStorage.getItem('todos');
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedTodos = TaskService.getAllTasks();
+  //   if (storedTodos) {
+  //     setTodos(JSON.parse(storedTodos));
+  //   }
+  // }, []);
+  console.log(TaskService.getAllTasks());
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
